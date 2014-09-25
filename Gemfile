@@ -44,7 +44,7 @@ gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
-gem 'rmagick'
+gem 'rmagick', require: false
 gem 'simple_form'
 gem 'thin'
 
