@@ -1,7 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
-config.assets.initialize_on_precompile = false
+
 
 
 # Require the gems listed in Gemfile, including any gems
@@ -21,12 +21,13 @@ module NeuLynx
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.assets.initialize_on_precompile = false
 
     social_keys = File.join(Rails.root, 'config', 'social_keys.yml')
     CONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(social_keys)))[Rails.env]
     CONFIG.each do |k,v|
       ENV[k.upcase] ||= v
     end
-    config.assets.initialize_on_precompile = false
   end
+
 end
