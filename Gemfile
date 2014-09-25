@@ -29,6 +29,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
+gem 'bootstrap-sass'
 gem 'bootstrap-sass-rails'
 gem 'carrierwave'
 gem 'twitter'

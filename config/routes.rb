@@ -2,9 +2,12 @@ SociaLoginRails::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  resources :contacts, only: [:new, :create]
+  get "pages/contacts"
   get "pages/terms"
   get "pages/welcome"
-  get "pages/landing"
+  get "pages/home"
+  get "about" => "pages#about"
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :users
 
@@ -12,7 +15,7 @@ SociaLoginRails::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root :to => 'pages#landing'
+  root :to => 'pages#home'
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
